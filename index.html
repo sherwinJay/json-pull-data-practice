@@ -49,8 +49,22 @@
 				}) 
 				
 			listContainer.innerHTML = dataList;	
-		});/**
-		$.ajax({
+		});
+		//$.get('toDoList2.json', function(response){});
+		
+		$.get('toDoList2.json', function(response){
+			let listContainer = document.querySelector(".main2"),
+					dataList = "";
+					
+					let lists = response;
+					lists.filter((idx) => {
+						return idx.color === "blue" && idx.body === "1";
+					}).map((item) => {
+						return  dataList += `<li> <div> ${item.title} </div> </li>`;
+					});
+				listContainer.innerHTML = dataList;	
+		});
+		/**$.ajax({
 			url: "toDoList2.json",
 			method: 'GET',
 			success: function(response){
