@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>React Practice</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="js/jquery-2.1.4.js"></script>
+	<script>
+	$(document).ready(function(){
+		/**$.ajax({
+			url: "toDoList.json",
+			method: 'GET',
+			success: function(response){
+				console.log(response.taskNote);
+				let listContainer = document.querySelector(".main"),
+					dataList = "";
+					
+					let lists = response;
+					lists.map((item) => {
+						return  item.taskNote.map( (idx) => {
+							return dataList += "<li>" + "<div>" + idx + "</div>" + "</li>";
+						});
+					});
+				//for(let i = 0; i < lists.length; i++ ){
+				//		dataList += "<li>" + lists[i].taskNote + "</li>";
+				//	}
+				//	dataList += "</ul>" ;
+				listContainer.innerHTML = dataList;	
+			}
+		});**/
+		fetch("toDoList.json")
+		.then(response => response.json())
+		.then(title => { 
+		let g = document.createElement('div');
+			g.className = "Div1";
+		console.log(g);
+
+			let listContainer = document.querySelector(".main"),
+				dataList = "",
+				lists = title;
+
+				lists.map((item) => {
+					return  item.taskNote.map( (idx) => {
+						return dataList += "<li>" + "<div>" + idx + "</div>" + "</li>";
+					});
+				}) 
+				
+			listContainer.innerHTML = dataList;	
+		});/**
+		$.ajax({
+			url: "toDoList2.json",
+			method: 'GET',
+			success: function(response){
+				console.log(response.taskNote);
+				let listContainer = document.querySelector(".main2"),
+					dataList = "";
+					
+					let lists = response;
+					lists.filter((idx) => {
+						return idx.color === "blue" && idx.body === "1";
+					}).map((item) => {
+						return  dataList += "<li>" + "<div>" + item.title + "</div>" + "</li>";
+					});
+				listContainer.innerHTML = dataList;	
+			}
+		});**/
+		
+		
+	});
+	</script>
+  <script>console.time("app")</script>
+</head>
+<body>
+		<ul class="main">
+			
+		</ul>
+		<ul class="main2">
+			
+		</ul>
+
+	
+		
+</body>
+</html>
