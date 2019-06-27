@@ -36,7 +36,9 @@
 		      .then(response => response.json())
 		      .then(gameNames => { 
 			let fetchName = gameNames;
-			console.log(fetchName);
+			fetchName.game_list.map((idx) => {
+				console.log(idx.game_name_en);
+			});
 		      });
 		fetch("toDoList.json")
 		.then(response => response.json())
