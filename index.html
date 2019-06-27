@@ -35,7 +35,7 @@
 	    	let getVendorsID = getVendorsURL.match(/[0-9]/gi);
 		getVendorsID = getVendorsID.join("");
 		console.log(getVendorsID);
-		fetch("http://player.onestop.t1t.in/pub/get_frontend_games/" + getVendorsID )
+		fetch("http://player.onestop.t1t.in/pub/get_frontend_games/1008")
 		      .then(response => response.json())
 		      .then(gameNames => { 
 			let fetchName = gameNames;
