@@ -31,6 +31,16 @@
 				listContainer.innerHTML = dataList;	
 			}
 		});**/
+		let getVendorsURL = location.search;
+	    	let getVendorsID = getVendorsURL.match(/[0-9]/gi).join("");
+		fetch("http://player.onestop.t1t.in/pub/get_frontend_games/" + getVendorsID )
+		      .then(response => response.json())
+		      .then(gameNames => { 
+			let fetchName = gameNames;
+			fetchName.map((idx) =>{
+			  console.log(idx.game_name_en);
+			});
+		      });
 		fetch("toDoList.json")
 		.then(response => response.json())
 		.then(title => { 
