@@ -31,15 +31,40 @@
 				listContainer.innerHTML = dataList;	
 			}
 		});**/
-		
-		fetch("https://player.onestop.t1t.in/pub/get_frontend_games/1008")
+		getAPI();
+    function getAPI(){
+      let arrAPI = [];
+    fetch("https://player.onestop.t1t.in/pub/get_frontend_games/1008")
 		      .then(response => response.json())
 		      .then(gameNames => { 
-			let fetchName = gameNames;
-			fetchName.game_list.map((idx) => {
-				console.log(idx.game_name_en);
-			});
-		      });
+            let fetchName = gameNames;
+            let arr = [];
+            let obj = {};
+            fetchName.game_list.map((gNames) => {
+              
+              let obj2 = obj["game_id_desktop"];
+              obj["game_id_desktop"] = gNames.game_id_desktop;
+              //obj2["game_name_en"] = gNames.game_name_en;
+            //console.log(gNames.game_name_en);
+            // console.log(obj);
+            arr.push(obj)
+             console.log(gNames.game_name_en);
+           
+             
+              //  // if(gNames.game_id_desktop == idx.id ){
+              //     if(path == "en"){
+              //     console.log(gNames.game_name_en);
+              //     }else if(path == "cn"){
+              //       console.log(gNames.game_name_cn);
+              //     }
+              // //  }
+                
+              
+            });
+          console.log(arr);
+          });
+         // console.log(arrAPI);
+       }
 		fetch("toDoList.json")
 		.then(response => response.json())
 		.then(title => { 
