@@ -73,9 +73,10 @@
     function changeNames( api ){
     [].forEach.call(gameContainer, idx => {
 	    let pass = api;
+	    let gmID = idx.id;
 	    console.log(pass);
 	    pass.forEach( (jdx)=>{
-	    	console.log(jdx.idx.id.game_name_cn);
+	    	console.log(jdx.gmID.game_name_cn);
 	    
 	    });
        // if(idx.src.charAt(51) == "/" ){
