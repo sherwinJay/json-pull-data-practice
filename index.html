@@ -71,7 +71,9 @@
 		      changeNames(getAPI());
     function changeNames( api ){
     [].forEach.call(gameContainer, idx => {
-	    api.forEach( (jdx)=>{
+	    let pass = api;
+	    consle.log(pass);
+	    pass.forEach( (jdx)=>{
 	    	console.log(jdx.idx.id.game_name_cn);
 	    
 	    });
