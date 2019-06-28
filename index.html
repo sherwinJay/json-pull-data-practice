@@ -75,8 +75,8 @@
 	    let pass = api;
 	    let gmID = idx.id;
 	    console.log(pass);
-	    pass.forEach( (jdx)=>{
-	    	console.log(jdx.RubyFoamyFortunes.game_name_cn);
+	    pass.map( (jdx)=>{
+	    	return console.log(jdx.RubyFoamyFortunes.game_name_cn);
 	    
 	    });
        // if(idx.src.charAt(51) == "/" ){
