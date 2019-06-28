@@ -42,10 +42,11 @@
            
             fetchName.game_list.map((gNames) => {
               let obj = {};
-		let obj2 = obj;
+		obj[gNames.game_desktop_id] = {};
+		    let obj2 = obj; 
              
-        obj["test"].game_name_en = gNames.game_name_en;
-	obj["test"].game_name_cn = gNames.game_name_cn;
+        obj2.game_name_en = gNames.game_name_en;
+	obj2.game_name_cn = gNames.game_name_cn;
             //console.log(gNames.game_name_en);
             // console.log(obj);
             arr.push(obj)
