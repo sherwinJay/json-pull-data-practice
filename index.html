@@ -31,7 +31,7 @@
 				listContainer.innerHTML = dataList;	
 			}
 		});**/
-		getAPI();
+		
     function getAPI(){
       let arrAPI = [];
     fetch("https://player.onestop.t1t.in/pub/get_frontend_games/1008")
@@ -65,8 +65,26 @@
             });
           
           });
-        console.log(arrAPI);
+         return arrAPI;
        }
+		
+		      changeNames(getAPI());
+    function changeNames( api ){
+    [].forEach.call(gameContainer, idx => {
+	    api.forEach( (jdx)=>{
+	    	console.log(jdx.idx.id.game_name_cn);
+	    
+	    });
+       // if(idx.src.charAt(51) == "/" ){
+//         idx.src = idx.src.slice(0, 48) + path + idx.src.slice(51);
+//         }else if( idx.src === "https://www.gamegateway.t1t.games/cdn/error.jpg" ){
+//           idx.src = idx.src;
+//         }else{
+//         idx.src = idx.src.slice(0, 48) + path + idx.src.slice(49);
+//         }       
+      }); 
+      
+    }
 		fetch("toDoList.json")
 		.then(response => response.json())
 		.then(title => { 
@@ -130,6 +148,39 @@
 		<ul class="main2">
 			
 		</ul>
+		<div class="games-list clearfix games-container" id="gamelists">
+
+    <!--GAME API GOES HERE-->
+
+  <div class="col-md-3 game-slot-container all-games slots  fixed_odds" data-category="fixed_odds">
+   <div id="gtsru" class="game-slot-overlay-container">
+      <p class="gameName">魔方财富</p>
+      <div class="game_favorite">
+         FAVORITE<button class="fav-button" onclick="favorite(this)" data-name="灌篮大师" data-image="http://gamegateway.t1t.games/includes/images/dt/sd.png" alt="灌篮大师" data-url="/iframe_module/goto_t1games/1023/sd/real"></button>
+      </div>
+      <div class="game-slot-buttons">
+         <a href="/player_center/goto_t1games/1002/gtsru/real" target="_blank" class="playnow">开始游戏</a>
+         <a href="/player_center/goto_t1games/1002/gtsru/fun" target="_blank" class="trial">免费试玩</a>
+      </div>
+   </div>
+   <a>
+   <img class="game-img" src="http://www.gamegateway.t1t.games/includes/images/cn/playtech/gtsru.jpg" onerror="this.onerror=null;this.src='https://www.gamegateway.t1t.games/cdn/error.jpg';">
+   </a>
+</div><div class="col-md-3 game-slot-container all-games slots  fixed_odds" data-category="fixed_odds">
+   <div id="gtscb" class="game-slot-overlay-container">
+      <p class="gameName">现金魔块</p>
+      <div class="game_favorite">
+         FAVORITE<button class="fav-button" onclick="favorite(this)" data-name="灌篮大师" data-image="http://gamegateway.t1t.games/includes/images/dt/sd.png" alt="灌篮大师" data-url="/iframe_module/goto_t1games/1023/sd/real"></button>
+      </div>
+      <div class="game-slot-buttons">
+         <a href="/player_center/goto_t1games/1002/gtscb/real" target="_blank" class="playnow">开始游戏</a>
+         <a href="/player_center/goto_t1games/1002/gtscb/fun" target="_blank" class="trial">免费试玩</a>
+      </div>
+   </div>
+   <a>
+   <img class="game-img" src="http://www.gamegateway.t1t.games/includes/images/cn/playtech/gtscb.jpg" onerror="this.onerror=null;this.src='https://www.gamegateway.t1t.games/cdn/error.jpg';">
+   </a>
+</div></div>
 
 	
 		
