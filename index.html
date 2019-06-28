@@ -31,7 +31,7 @@
 				listContainer.innerHTML = dataList;	
 			}
 		});**/
-	let gameContainer = document.getElementsByClassName("game-img");	
+	let gameContainer = document.getElementsByClassName("game-slot-container");	
     function getAPI(){
       let arrAPI = [];
     fetch("https://player.onestop.t1t.in/pub/get_frontend_games/1008")
@@ -76,6 +76,7 @@
 	    let gmID = idx.id;
 	    console.log(gmID);
 	    console.log(gmID.game_name_cn);
+	    console.log(gmID.game_name_en);
 	    pass.map( jdx => {
 	    	console.log(jdx);
 	    
@@ -157,8 +158,8 @@
 
     <!--GAME API GOES HERE-->
 
-  <div class="col-md-3 game-slot-container all-games slots  fixed_odds" data-category="fixed_odds">
-   <div id="gtsru" class="game-slot-overlay-container">
+  <div id="gtsru" class="col-md-3 game-slot-container all-games slots  fixed_odds" data-category="fixed_odds">
+   <div class="game-slot-overlay-container">
       <p class="gameName">魔方财富</p>
       <div class="game_favorite">
          FAVORITE<button class="fav-button" onclick="favorite(this)" data-name="灌篮大师" data-image="http://gamegateway.t1t.games/includes/images/dt/sd.png" alt="灌篮大师" data-url="/iframe_module/goto_t1games/1023/sd/real"></button>
@@ -171,8 +172,8 @@
    <a>
    <img class="game-img" src="http://www.gamegateway.t1t.games/includes/images/cn/playtech/gtsru.jpg" onerror="this.onerror=null;this.src='https://www.gamegateway.t1t.games/cdn/error.jpg';">
    </a>
-</div><div class="col-md-3 game-slot-container all-games slots  fixed_odds" data-category="fixed_odds">
-   <div id="gtscb" class="game-slot-overlay-container">
+</div><div  id="gtscb"  class="col-md-3 game-slot-container all-games slots  fixed_odds" data-category="fixed_odds">
+   <divclass="game-slot-overlay-container">
       <p class="gameName">现金魔块</p>
       <div class="game_favorite">
          FAVORITE<button class="fav-button" onclick="favorite(this)" data-name="灌篮大师" data-image="http://gamegateway.t1t.games/includes/images/dt/sd.png" alt="灌篮大师" data-url="/iframe_module/goto_t1games/1023/sd/real"></button>
